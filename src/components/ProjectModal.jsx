@@ -1,11 +1,26 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { PROJECTS } from '../data/projects'
 import Logo from './Logo'
 
-function PlatformCard({ title, desc, image }) {
+function PlatformCard({ title, desc, image, onImageClick }) {
   return (
     <div className="platform-card">
-      <div className="platform-card-img">
+      <div
+        className={`platform-card-img${image ? ' platform-card-img--clickable' : ''}`}
+        onClick={image ? () => onImageClick(image, title) : undefined}
+        role={image ? 'button' : undefined}
+        tabIndex={image ? 0 : undefined}
+        onKeyDown={
+          image
+            ? (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onImageClick(image, title)
+                }
+              }
+            : undefined
+        }
+      >
         {image ? (
           <img src={image} alt={title} />
         ) : (
@@ -32,6 +47,7 @@ function PlatformCard({ title, desc, image }) {
 
 export default function ProjectModal({ projectKey, onClose }) {
   const modalRef = useRef(null)
+  const [lightboxImage, setLightboxImage] = useState(null)
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -41,16 +57,22 @@ export default function ProjectModal({ projectKey, onClose }) {
     }
   }, [])
 
+  const openLightbox = (src, alt) => setLightboxImage({ src, alt })
+  const closeLightbox = () => setLightboxImage(null)
+
   const p = PROJECTS[projectKey]
   if (!p) return null
 
   return (
-    <div className="modal-overlay" ref={modalRef}>
+    <div
+      className={`modal-overlay${lightboxImage ? ' modal-overlay--lightbox-open' : ''}`}
+      ref={modalRef}
+    >
       <div className="modal-content">
         {/* Header */}
         <div className="modal-header">
           <div className="nav-logo">
-            <Logo size={28} />
+            <Logo size={32} />
             <span className="logo-name">Anthony Jones</span>
           </div>
           <button className="modal-close" onClick={onClose} aria-label="Close">
@@ -152,6 +174,7 @@ export default function ProjectModal({ projectKey, onClose }) {
                 title={pl.title}
                 desc={pl.desc}
                 image={pl.image}
+                onImageClick={openLightbox}
               />
             ))}
           </div>
@@ -176,6 +199,26 @@ export default function ProjectModal({ projectKey, onClose }) {
           © Copyright {new Date().getFullYear()}
         </footer>
       </div>
+
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <button
+            className="lightbox-close modal-close"
+            onClick={closeLightbox}
+            aria-label="Close image"
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 4l12 12M16 4L4 16" stroke="white" strokeWidth="1.5" />
+            </svg>
+          </button>
+          <img
+            src={lightboxImage.src}
+            alt={lightboxImage.alt}
+            className="lightbox-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   )
 }

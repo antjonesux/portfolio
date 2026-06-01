@@ -6,13 +6,22 @@
  * are used until you drop in real assets.
  */
 
+import uspsCard from '../assets/usps1.png'
+import aimsplusCard from '../assets/aims1.png'
+import uspsMCP from '../assets/usps2.png'
+import uspsDailyDigest from '../assets/usps3.png'
+import uspsConsumerDashboard from '../assets/usps4.png'
+import aimsplusOrderManagement from '../assets/aims2.png'
+import aimsplusFieldOperations from '../assets/aims3.png'
+import aimsplusDeploymentTracking from '../assets/aims4.png'
+
 export const PROJECTS = {
   usps: {
     id: 'usps',
     title: 'USPS Informed Delivery',
     subtitle: 'Modernizing how millions of Americans connect with their mail.',
     cardSubtitle: 'Designing for 74M Americans',
-    cardImage: null, // replace with: import uspsCard from '../assets/usps-card.png'
+    cardImage: uspsCard,
     role: 'Senior UX Designer',
     timeline: 'Jan 2023 - Present',
     scope: 'Web, Email, & Dashboard Redesigns',
@@ -56,17 +65,17 @@ export const PROJECTS = {
       {
         title: 'Mailer Campaign Portal',
         desc: 'The business portal behind 7.9B campaign impressions',
-        image: null, // replace with imported image
+        image: uspsMCP,
       },
       {
         title: 'Daily Digest',
         desc: 'Redesigning the daily email experience for 74M Americans',
-        image: null,
+        image: uspsDailyDigest,
       },
       {
         title: 'Consumer Dashboard',
         desc: 'The consumer hub for 74M+ Informed Delivery users',
-        image: null,
+        image: uspsConsumerDashboard,
       },
     ],
     learned: [
@@ -82,7 +91,7 @@ export const PROJECTS = {
     title: 'AIMSPlus App',
     subtitle: 'Redesigning warehouse operations for the telecom industry.',
     cardSubtitle: 'Building a design system from zero',
-    cardImage: null,
+    cardImage: aimsplusCard,
     role: 'UX Lead',
     timeline: 'June 2021 – May 2026',
     scope: 'Desktop, Mobile, & PDA Scanner',
@@ -126,17 +135,17 @@ export const PROJECTS = {
       {
         title: 'Order Management',
         desc: 'Scheduling 100k+ pickups across North America',
-        image: null,
+        image: aimsplusOrderManagement,
       },
       {
         title: 'Field Operations',
         desc: 'Scan-based mobile workflow for warehouse teams',
-        image: null,
+        image: aimsplusFieldOperations,
       },
       {
         title: 'Deployment Tracking',
         desc: 'Real-time status and signature capture in the field',
-        image: null,
+        image: aimsplusDeploymentTracking,
       },
     ],
     learned: [

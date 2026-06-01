@@ -1,10 +1,12 @@
+import aboutPhoto from '../assets/about.png'
+
 export default function About() {
   return (
     <section id="about" className="about-section">
       <h2>About</h2>
       <div className="about-grid">
         <div className="about-photo">
-          {/* Replace with: <img src={photoSrc} alt="Anthony Jones" /> */}
+          <img src={aboutPhoto} alt="Anthony Jones" />
         </div>
         <div className="about-text">
           <h3>

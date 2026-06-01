@@ -11,10 +11,18 @@
   --radius-sm: 8px;
   --max-width: 1200px;
   --content-padding: 24px;
+  --section-gap: 48px;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --section-gap: 48px;
+  }
 }
 
 @media (max-width: 767px) {
   :root {
     --content-padding: 20px;
+    --section-gap: 24px;
   }
 }
