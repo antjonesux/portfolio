@@ -15,6 +15,9 @@ import aimsplusOrderManagement from '../assets/aims2.png'
 import aimsplusFieldOperations from '../assets/aims3.png'
 import aimsplusDeploymentTracking from '../assets/aims4.png'
 import sidelineCard from '../assets/sideline1.png'
+import filmRoomCard from '../assets/sideline2.png'
+import gamePlanCard from '../assets/sideline3.png'
+import tendenciesCard from '../assets/sideline4.png'
 
 export const PROJECT_ORDER = ['usps', 'aimsplus', 'sideline']
 
@@ -165,21 +168,21 @@ export const PROJECTS = {
       {
         title: 'Film Room',
         desc: 'The operational hub for game review and play logging. Players create games, track drives, and capture every play call while maintaining context around score, field position, and game situation.',
-        image: null,
+        image: filmRoomCard,
         // TODO: Film Room screenshot; TODO: Play Logger screenshot with YOUR CALLS visible
         placeholderLabel: 'TODO: Film Room / Play Logger screenshot',
       },
       {
         title: 'Game Plan',
         desc: 'A situational play sheet organized around fifteen coaching scenarios. Players build and refine a strategy before kickoff while performance data continuously improves recommendations.',
-        image: null,
+        image: gamePlanCard,
         // TODO: Game Plan / Play Sheet Editor screenshot
         placeholderLabel: 'TODO: Game Plan / Play Sheet Editor screenshot',
       },
       {
         title: 'Tendencies',
         desc: 'The intelligence layer. Cross-game analytics reveal what works, where players become predictable, and how behavior changes under pressure.',
-        image: null,
+        image: tendenciesCard,
         // TODO: Tendencies screenshot showing What's Working or Am I Predictable
         placeholderLabel: "TODO: Tendencies — What's Working or Am I Predictable",
       },
