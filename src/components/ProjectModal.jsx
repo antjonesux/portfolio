@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { PROJECTS } from '../data/projects'
 import Logo from './Logo'
 
-function PlatformCard({ title, desc, image, onImageClick }) {
+function PlatformCard({ title, desc, image, placeholderLabel, onImageClick }) {
   return (
     <div className="platform-card">
       <div
@@ -24,18 +24,8 @@ function PlatformCard({ title, desc, image, onImageClick }) {
         {image ? (
           <img src={image} alt={title} />
         ) : (
-          <span
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              height: '100%',
-              color: 'rgba(255,255,255,0.2)',
-              fontSize: 12,
-            }}
-          >
-            Screenshot
+          <span className="platform-card-placeholder">
+            {placeholderLabel || 'Screenshot'}
           </span>
         )}
       </div>
@@ -99,10 +89,12 @@ export default function ProjectModal({ projectKey, onClose }) {
               <span className="meta-label">Scope</span>
               <span className="meta-value">{p.scope}</span>
             </div>
-            <div className="meta-item">
-              <span className="meta-label">Team</span>
-              <span className="meta-value">{p.team}</span>
-            </div>
+            {p.team && (
+              <div className="meta-item">
+                <span className="meta-label">Team</span>
+                <span className="meta-value">{p.team}</span>
+              </div>
+            )}
           </div>
           <div>
             <div className="meta-item">
@@ -119,7 +111,20 @@ export default function ProjectModal({ projectKey, onClose }) {
         {/* Background */}
         <section className="modal-section">
           <h2 className="section-heading">Background</h2>
-          <p className="body-text">{p.background}</p>
+          {p.backgroundSections ? (
+            p.backgroundSections.map((section, i) => (
+              <div className="background-subsection" key={i}>
+                <h3 className="subsection-heading">{section.title}</h3>
+                {section.paragraphs.map((para, j) => (
+                  <p className="body-text" key={j}>
+                    {para}
+                  </p>
+                ))}
+              </div>
+            ))
+          ) : (
+            <p className="body-text">{p.background}</p>
+          )}
         </section>
 
         {/* Design Challenge */}
@@ -164,9 +169,14 @@ export default function ProjectModal({ projectKey, onClose }) {
           </div>
         </section>
 
-        {/* Cross-Platform Experience */}
+        {/* Product / Platform Experience */}
         <section className="modal-section">
-          <h2 className="section-heading">Cross-Platform Experience</h2>
+          <h2 className="section-heading">
+            {p.platformsSectionTitle || 'Cross-Platform Experience'}
+          </h2>
+          {p.platformsIntro && (
+            <p className="body-text platforms-intro">{p.platformsIntro}</p>
+          )}
           <div className="platform-grid">
             {p.platforms.map((pl, i) => (
               <PlatformCard
@@ -174,11 +184,26 @@ export default function ProjectModal({ projectKey, onClose }) {
                 title={pl.title}
                 desc={pl.desc}
                 image={pl.image}
+                placeholderLabel={pl.placeholderLabel}
                 onImageClick={openLightbox}
               />
             ))}
           </div>
         </section>
+
+        {/* Design Decisions */}
+        {p.designDecisions && (
+          <section className="modal-section">
+            <h2 className="section-heading">Design Decisions</h2>
+            <div className="focused-grid">
+              {p.designDecisions.map((d, i) => (
+                <div className="focused-item" key={i}>
+                  <strong>{d.title}</strong> {d.desc}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* What I Learned */}
         <section className="modal-section">
@@ -194,6 +219,23 @@ export default function ProjectModal({ projectKey, onClose }) {
             ))}
           </div>
         </section>
+
+        {/* Technical Details */}
+        {p.technicalDetails && (
+          <section className="modal-section">
+            <h2 className="section-heading">Technical Details</h2>
+            <div className="technical-details">
+              <div className="meta-item">
+                <span className="meta-label">Stack</span>
+                <span className="meta-value">{p.technicalDetails.stack}</span>
+              </div>
+              <div className="meta-item">
+                <span className="meta-label">Role</span>
+                <span className="meta-value">{p.technicalDetails.role}</span>
+              </div>
+            </div>
+          </section>
+        )}
 
         <footer className="modal-footer">
           © Copyright {new Date().getFullYear()}

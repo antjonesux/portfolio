@@ -1,13 +1,10 @@
 const capabilities = [
   { skill: 'Systems Thinking', proof: 'Cross-platform architecture across desktop, mobile & PDA' },
-  { skill: 'UX Strategy', proof: 'Led design direction for a 74M-user product' },
-  { skill: 'Product Design', proof: 'End-to-end ownership from research to shipped features' },
-  { skill: 'UI Design', proof: 'Modernized legacy interfaces at enterprise scale' },
-  { skill: 'Prototyping', proof: 'Prototype-driven validation that saved weeks of engineering' },
-  { skill: 'Research', proof: 'Field research on warehouse floors and stakeholder interviews' },
+  { skill: 'UX Strategy', proof: 'Led design direction for a product serving 74M+ users' },
   { skill: 'Design Systems', proof: "Built AIMSPlus's component library from zero" },
-  { skill: 'Collaboration', proof: 'Partnered with PMs, BAs, and developers across both orgs' },
-  { skill: 'Web Design', proof: 'Responsive consumer and business-facing web products' },
+  { skill: 'Prototyping', proof: 'Prototype-driven validation that saved weeks of engineering' },
+  { skill: 'Research', proof: 'Field research on warehouse floors that reshaped product direction' },
+  { skill: 'Product Design', proof: 'End-to-end ownership from discovery through shipped features' },
 ]
 
 export default function Capabilities() {

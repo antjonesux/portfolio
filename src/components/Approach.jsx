@@ -1,27 +1,27 @@
 const approach = [
   {
-    title: 'Start together.',
-    desc: "I bring teams in early — design is better when everyone's part of the conversation.",
+    title: 'Audit before you act.',
+    desc: 'At USPS, I mapped three undocumented product surfaces before proposing a single change. Understanding what exists is the first design decision.',
   },
   {
-    title: 'Move fast, stay sharp.',
-    desc: 'Quick, focused iterations help us explore widely and zero in on what works.',
+    title: 'Get off the screen.',
+    desc: 'At AIMSPlus, what stakeholders described and what warehouse workers actually did were never the same. The best decisions came from the loading dock, not the conference room.',
   },
   {
     title: "Show, don't tell.",
-    desc: 'I prototype early and often to make ideas real and decisions faster.',
+    desc: 'I prototype early because opinions change when people can interact with something real. At USPS, every prototype went through stakeholder review before it touched engineering.',
   },
   {
-    title: 'Build for growth.',
-    desc: 'I think in systems — every component should scale and support the bigger picture.',
+    title: 'Build the system, not just the screen.',
+    desc: 'At AIMSPlus, I built a component library from zero while shipping features. Every week I delayed formalizing a pattern, I paid for it in inconsistency.',
   },
   {
-    title: 'Design in context.',
-    desc: 'I ground decisions in real workflows, not just edge cases or best guesses.',
+    title: 'Design for the handoff.',
+    desc: "Clean, developer-ready files saved weeks at USPS. At this scale, design debt doesn't just slow you down — it compounds every sprint.",
   },
   {
-    title: 'Stay flexible.',
-    desc: "Not every idea will land. I test, refine, and move forward — always focused on the goal.",
+    title: 'Earn the change.',
+    desc: 'Redesigning legacy products at scale means proving every decision. I build the case before I build the interface.',
   },
 ]
 

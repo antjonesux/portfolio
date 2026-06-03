@@ -1,17 +1,23 @@
 export default function Hero() {
   return (
     <section className="hero">
-      <h1>
-        UX Designer.
-        <br />
-        Systems Thinker.
-        <br />
-        Built for scale.
-      </h1>
-      <p className="hero-sub">
-        I design systems that make complexity invisible — for teams building
-        products that matter.
-      </p>
+      <div className="hero-grid">
+        <div className="hero-main">
+          <h1>
+            UX Designer.
+            <br />
+            Systems Thinker.
+            <br />
+            Built for scale.
+          </h1>
+        </div>
+        <aside className="hero-aside">
+          <p className="hero-sub">
+            From enterprise platforms serving 74M+ users to products I launch
+            myself — I design systems that make complexity invisible.
+          </p>
+        </aside>
+      </div>
     </section>
   )
 }

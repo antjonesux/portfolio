@@ -15,12 +15,15 @@ import aimsplusOrderManagement from '../assets/aims2.png'
 import aimsplusFieldOperations from '../assets/aims3.png'
 import aimsplusDeploymentTracking from '../assets/aims4.png'
 
+export const PROJECT_ORDER = ['usps', 'aimsplus', 'sideline']
+
 export const PROJECTS = {
   usps: {
     id: 'usps',
     title: 'USPS Informed Delivery',
     subtitle: 'Modernizing how millions of Americans connect with their mail.',
-    cardSubtitle: 'Designing for 74M Americans',
+    cardSubtitle:
+      'Redesigned core USPS experiences used by 74M+ consumers nationwide.',
     cardImage: uspsCard,
     role: 'Senior UX Designer',
     timeline: 'Jan 2023 - Present',
@@ -86,11 +89,137 @@ export const PROJECTS = {
     ],
   },
 
+  sideline: {
+    id: 'sideline',
+    title: 'The Sideline',
+    subtitle:
+      'A coaching intelligence app for competitive College Football gamers.',
+    cardSubtitle:
+      'Designed and shipped a coaching intelligence SaaS product in 5 weeks, end-to-end.',
+    // TODO: Replace with a phone mockup showing The Sideline Play Logger or Tendencies screen.
+    cardImage: null,
+    cardImageLabel:
+      'TODO: Replace with a phone mockup showing The Sideline Play Logger or Tendencies screen.',
+    role: 'Founder · Product Designer · Developer',
+    timeline: 'April 2026 – May 2026',
+    scope: 'Product Strategy, UX/UI, Frontend, Backend',
+    overview:
+      'Designed and shipped a production coaching tool that helps competitive players study tendencies, build game plans, and make better play-calling decisions over time.',
+    backgroundSections: [
+      {
+        title: 'The Problem',
+        paragraphs: [
+          'CFB26 has one of the deepest playbook systems in sports gaming — 134 team playbooks, hundreds of formations, and thousands of decisions across a season. Yet players have no way to study their own play-calling behavior.',
+          'Competitive dynasty players care about scheme identity. They spend hours building rosters, scouting opponents, and learning playbooks, but when it comes to calling plays, most decisions are still driven by memory and instinct.',
+          "The gap wasn't access to plays. The gap was intelligence.",
+        ],
+      },
+      {
+        title: 'The Opportunity',
+        paragraphs: [
+          'The existing ecosystem offered playbook browsers, recruiting tools, and roster management. Nobody was helping players understand what actually works for them.',
+          'I saw an opportunity to create a coaching loop that turns play-calling decisions into actionable insight.',
+        ],
+      },
+    ],
+    designChallenge: {
+      title: 'The Hard Part',
+      paragraphs: [
+        "The challenge wasn't building a play logger.",
+        'It was solving the effort-to-value problem.',
+        'The product only becomes valuable after users generate data. But generating that data requires effort. If logging feels like work, users stop. If users stop logging, there is no insight. Without insight, there is no product.',
+        'Early testing revealed a critical insight: the app worked best when players chose their play inside the app before running it in-game. Logging became a byproduct of calling rather than a separate task.',
+        'That insight fundamentally changed the product.',
+        'The Sideline stopped being a logging tool and became a coaching tool.',
+      ],
+    },
+    impact: [
+      { value: '134+', label: 'Playbooks mapped and classified' },
+      { value: '15', label: 'Situational coaching frameworks' },
+      { value: '5 Weeks', label: 'From idea to production' },
+      { value: '3', label: 'Iterations of the core interaction' },
+    ],
+    focused: [
+      {
+        title: 'Design the loop, not the features.',
+        desc: 'The product is a compounding system. Play sheets feed logging. Logging feeds tendencies. Tendencies improve future game plans. Every feature had to strengthen that loop.',
+      },
+      {
+        title: 'Make logging a byproduct.',
+        desc: 'The biggest risk was user fatigue. Integrating play sheets directly into the logger transformed logging from a task into part of the coaching workflow.',
+      },
+      {
+        title: "Match the user's mental model.",
+        desc: 'Every surface uses coaching language and coaching structure. Film Room, Game Plan, and Tendencies mirror how coaches prepare, review, and adjust.',
+      },
+      {
+        title: "Ship what's validated.",
+        desc: 'Several features were intentionally removed or deferred before launch. The goal was proving the loop, not maximizing feature count.',
+      },
+    ],
+    platformsSectionTitle: 'Three Pillars, One Loop',
+    platformsIntro:
+      'The app architecture mirrors how a real coaching staff operates: film room for data, game plan for preparation, tendencies for analysis.',
+    platforms: [
+      {
+        title: 'Film Room',
+        desc: 'The operational hub for game review and play logging. Players create games, track drives, and capture every play call while maintaining context around score, field position, and game situation.',
+        image: null,
+        // TODO: Film Room screenshot; TODO: Play Logger screenshot with YOUR CALLS visible
+        placeholderLabel: 'TODO: Film Room / Play Logger screenshot',
+      },
+      {
+        title: 'Game Plan',
+        desc: 'A situational play sheet organized around fifteen coaching scenarios. Players build and refine a strategy before kickoff while performance data continuously improves recommendations.',
+        image: null,
+        // TODO: Game Plan / Play Sheet Editor screenshot
+        placeholderLabel: 'TODO: Game Plan / Play Sheet Editor screenshot',
+      },
+      {
+        title: 'Tendencies',
+        desc: 'The intelligence layer. Cross-game analytics reveal what works, where players become predictable, and how behavior changes under pressure.',
+        image: null,
+        // TODO: Tendencies screenshot showing What's Working or Am I Predictable
+        placeholderLabel: "TODO: Tendencies — What's Working or Am I Predictable",
+      },
+    ],
+    designDecisions: [
+      {
+        title: 'Field Position Instead of Yardage',
+        desc: 'Players naturally know where the ball ended up, not how many yards they gained. Switching to field position reduced friction and removed mental calculations during gameplay.',
+      },
+      {
+        title: 'Three Logger Iterations',
+        desc: 'The most important interaction in the product was redesigned three times before launch. Simplicity emerged through testing rather than assumptions.',
+      },
+      {
+        title: 'Belief Before Effort',
+        desc: 'Onboarding focuses on value first. Players see the coaching loop before being asked to configure teams, playbooks, or game plans.',
+      },
+      {
+        title: 'Building With Multiple AI Agents',
+        desc: 'Managing multiple AI coding agents introduced a new systems-design challenge. Shared contracts, ownership rules, and structured handoffs prevented architectural drift and maintained consistency across the product.',
+      },
+    ],
+    learned: [
+      "The hardest problem wasn't interface design. It was reducing the gap between effort and value.",
+      'Domain expertise accelerates product decisions but can hide onboarding friction.',
+      'Removing features is often more important than shipping them.',
+      'The same systems thinking that creates design consistency can also create development consistency.',
+    ],
+    technicalDetails: {
+      stack:
+        'Next.js · React 19 · Supabase · Tailwind · shadcn/ui · Zustand · TanStack Query · Recharts · Vercel',
+      role: 'Product Strategy · UX/UI Design · Frontend Development · Backend Development · QA · Launch Planning',
+    },
+  },
+
   aimsplus: {
     id: 'aimsplus',
     title: 'AIMSPlus App',
     subtitle: 'Redesigning warehouse operations for the telecom industry.',
-    cardSubtitle: 'Building a design system from zero',
+    cardSubtitle:
+      'Built the design function from scratch — systems, patterns, and workflows.',
     cardImage: aimsplusCard,
     role: 'UX Lead',
     timeline: 'June 2021 – May 2026',

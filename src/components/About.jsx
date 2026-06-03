@@ -16,9 +16,11 @@ export default function About() {
           <p>
             I've done the zero-to-one work — creating design systems, processes,
             and culture where none existed — and I've operated at scale,
-            designing for 74M+ users where every decision compounds. I work best
-            at the intersection of those two things: where the system needs to
-            grow but the experience needs to stay simple.
+            designing for 74M+ users where every decision compounds. I've also
+            shipped products end-to-end, owning everything from strategy and UX
+            to development and launch. The problems I'm most drawn to now are
+            the ones where complexity is unavoidable — but clarity is still the
+            goal.
           </p>
         </div>
       </div>
