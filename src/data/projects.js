@@ -14,6 +14,7 @@ import uspsConsumerDashboard from '../assets/usps4.png'
 import aimsplusOrderManagement from '../assets/aims2.png'
 import aimsplusFieldOperations from '../assets/aims3.png'
 import aimsplusDeploymentTracking from '../assets/aims4.png'
+import sidelineCard from '../assets/sideline1.png'
 
 export const PROJECT_ORDER = ['usps', 'aimsplus', 'sideline']
 
@@ -97,7 +98,7 @@ export const PROJECTS = {
     cardSubtitle:
       'Designed and shipped a coaching intelligence SaaS product in 5 weeks, end-to-end.',
     // TODO: Replace with a phone mockup showing The Sideline Play Logger or Tendencies screen.
-    cardImage: null,
+    cardImage: sidelineCard,
     cardImageLabel:
       'TODO: Replace with a phone mockup showing The Sideline Play Logger or Tendencies screen.',
     role: 'Founder · Product Designer · Developer',
