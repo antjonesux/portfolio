@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-grid">
         <div className="hero-main">
-          <h1>
+          <h1 className="hero-title">
             UX Designer.
             <br />
             Systems Thinker.
@@ -12,7 +12,7 @@ export default function Hero() {
           </h1>
         </div>
         <aside className="hero-aside">
-          <p className="hero-sub">
+          <p className="hero-statement">
             From enterprise platforms serving 74M+ users to products I launch
             myself — I design systems that make complexity invisible.
           </p>

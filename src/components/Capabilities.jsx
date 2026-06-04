@@ -10,7 +10,7 @@ const capabilities = [
 export default function Capabilities() {
   return (
     <section className="capabilities-section">
-      <h2>Capabilities</h2>
+      <h2 className="section-title">Capabilities</h2>
       <div className="caps-grid">
         {capabilities.map((c) => (
           <div className="cap-item" key={c.skill}>

@@ -2,6 +2,32 @@ import { useState, useEffect, useRef, useId } from 'react'
 import resumePdf from '../assets/resume.pdf'
 import Logo from './Logo'
 
+function MenuIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path
+        d="M3 6.5h12M3 11.5h12"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
+
+function CloseIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path
+        d="M4.5 4.5l9 9M13.5 4.5l-9 9"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
+
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const navShellRef = useRef(null)
@@ -67,12 +93,13 @@ export default function Nav() {
         </div>
         <button
           type="button"
-          className="nav-link nav-menu-toggle"
+          className="nav-link nav-menu-button"
           onClick={() => setMenuOpen((open) => !open)}
           aria-expanded={menuOpen}
           aria-controls={panelId}
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         >
-          {menuOpen ? 'Close' : 'Menu'}
+          {menuOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
       </nav>
 

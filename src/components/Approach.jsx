@@ -28,7 +28,7 @@ const approach = [
 export default function Approach() {
   return (
     <section className="approach-section">
-      <h2>Approach</h2>
+      <h2 className="section-title">Approach</h2>
       <div className="approach-grid">
         {approach.map((a, i) => (
           <div className="approach-item" key={i}>

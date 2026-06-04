@@ -3,7 +3,7 @@ import resumePdf from '../assets/resume.pdf'
 export default function Contact() {
   return (
     <section id="contact" className="contact-section">
-      <h2>Contact</h2>
+      <h2 className="section-title">Contact</h2>
       <div className="contact-card">
         <h3>Let's build something that scales.</h3>
         <p>

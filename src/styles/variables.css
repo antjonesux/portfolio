@@ -14,6 +14,34 @@
   --space-2: 8px;
   --card-gap: 24px;
   --section-gap: 108px;
+
+  /* Typography scale (body does not cascade into card/nav — scoped via tokens) */
+  --font-body: 16px;
+  --font-body-secondary: 15px;
+  --font-body-large: 18px;
+  --font-card-title: 18px;
+  --font-card-desc: 14px;
+  --font-cap-skill: 15px;
+  --font-cap-proof: 14px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-body: 18px;
+    --font-body-secondary: 16px;
+    --font-body-large: 22px;
+    --font-card-desc: 15px;
+    --font-cap-skill: 16px;
+    --font-cap-proof: 15px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --font-body: 20px;
+    --font-body-secondary: 17px;
+    --font-body-large: 26px;
+  }
 }
 
 @media (max-width: 1023px) {
